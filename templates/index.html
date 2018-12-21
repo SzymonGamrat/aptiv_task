@@ -1,0 +1,22 @@
+<!doctype html>
+<head>
+<title>Zadanie APTIV</title>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+<div class=page>
+    <h1>Aptiv Task</h1>
+    <button type="button" onclick="LED_on()">Enable LED</button>
+    <button type="button" onclick="alert_button()">Disable LED</button>
+    <button type="button" onclick="blink_button()">Blink</button>    
+    <button type="button" onclick="stop_button()">Blink STOP</button>    
+    
+	
+</div>
+</body>
+
+
+</html>
