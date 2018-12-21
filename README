@@ -1,0 +1,52 @@
+Nalezy skopiowac wszystkie pliki z repozytorium.
+
+Po sciagnieciu plikow nalezy zainstalowac wirtualne srodowisko "virtualenv", jezeli nie bedzie zainstalowane uzywamy polecenia:
+
+	sudo apt-get install virtualenv
+
+
+Nastepnie nalezy stworzyc folder, w ktorym utworzymy wirtualne srodowisko z wersja pythona, ktora bedziemy chcieli uzywac przy pracy z tym programem. W tym celu sluzy do tego polecenie:
+
+	virtualenv --python=/usr/bin/python<wersja> --no-site-packages 		<nazwa_folderu_w_ktorym_utworzymy_srodowisko>
+
+Aby zapobiec pojawianiu sie ewenetualnych bledow najlepszym rozwiazaniem bedzie przekopiowanie plikow z repozytorium do folderu, w ktorym zostalo zainstalowane wirtualne srodowisko. 
+
+Nastepnie nalezy aktywowac wirtualne srodowisko robimy to poleceniem:
+
+	source <nazwa_folderu_w_ktorym_utworzono_wirtualne_srodowisko>/bin/activate
+
+Aby deaktywowac srodowisko wpisujemy w terminalu:
+
+	deactivate
+
+Po aktywacji wirtualnego srodowiska nalezy zainstalowac framework Flask nasze sockety socketio oraz biblioteke do uruchamiania kodu eventlet, robimy to poleceniami:
+
+	pip install flask
+
+	pip install flask-socketio
+
+	pip install eventlet 
+
+
+Po uruchomieniu wirtualnego srodowiska przechodzimy do folderu, w ktorym znajduja sie pliki. Jezeli wykonales krok tak jak napisalem wyzej znajduja sie one w tym samym folderze co pliki z wirtualnego srodowiska. 
+
+Nastepnie uruchamiamy plik run.sh poleceniem:
+
+	./run.sh
+
+Po uruchomieniu run.sh nasz serwer wystartuje. Teraz mozemy korzystac z aplikacji w przegladarce na hoscie, ktory zna IP serwera. W celu sprawdzenia IP server uzywamy polecenia:
+
+	ifconfig
+
+W tym wypadku bedzie to adres IP sieci, w ktorej znajduje sie urzadzenie.
+
+Serwer dziala w oparciu o pythonowski framework flask, ktory pozwala na szybkie tworzenie widokow WWW oraz ma zwarta w sobie bibiloteke flask-socketio. Pozwala ona na obsluge websocketow. Widoki pomagaja przy sterowaniu kontrolera przez co mozemy wykonywac dowolne zadania zaimpletowane w pythonie. Framework jest oparty na modelu MVC(model, view, controler), w tym przypadku nie jest uzywany model poniewaz nie ma bazy danych.
+Flask udostepnia klienta przegladarka WWW. Klient a wlasciwie jego kod sklada sie z bardzo prostej strony HTML korzystajacej z biblioteki JS socketio, ktora sluzy do obslugi zapytan do serwera.
+Funckaj "emit" znajdujaca sie w kodzie jest funkcja , ktorej wyniki dostana wszyscy klienci podlaczeni do serwera.
+
+
+
+
+
+
+
