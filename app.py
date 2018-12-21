@@ -54,7 +54,7 @@ def blink_button(json):
 
 @socketio.on('STOP')
 def stop_button(json):
-    #a = 2
+    #a = 2 #musi to byc zmienna globalna
     print('LED STOP blinking'.format(json))
     emit('STOP blinking')
 if __name__ == "__main__":
